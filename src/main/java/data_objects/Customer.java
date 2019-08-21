@@ -13,7 +13,8 @@ public class Customer {
     private String email;
     private String password;
 
-    public Customer(String name, String birthdate, String address, String city, String state, String pin, String mobileNumber, String email, String password) {
+    public Customer(String name, String birthdate, String address, String city, String state,
+                    String pin, String mobileNumber, String email, String password) {
         this.name = name;
 //        this.gender = gender;
         this.birthdate = birthdate;

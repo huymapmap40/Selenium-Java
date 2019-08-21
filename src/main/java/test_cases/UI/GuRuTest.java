@@ -8,6 +8,7 @@ import wrappers.BrowserWrapper;
 import data_objects.Customer;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import test_data.general.PageURLs;
 
 public class GuRuTest extends TestSetup {
 
@@ -50,7 +51,7 @@ public class GuRuTest extends TestSetup {
     public void GuRuTestFunctional() {
         System.out.println("Demo test GuRu 99 pages");
 
-        GuRuTest.setupTest(Constant.urlPage);
+        GuRuTest.setupTest(PageURLs.GURU_99_PAGE);
         FillEmailGuruPage fillEmailGuruPage = FillEmailGuruPage.getInstance();
 
         // Fill an email and get userID/password
@@ -60,7 +61,7 @@ public class GuRuTest extends TestSetup {
         System.out.println(userId + "/" + userPasswd);
 
         // Login to manager page with valid userID/password
-        browser.get(Constant.urlLoginPage);
+        browser.get(PageURLs.LOGIN_GURU_99_PAGE);
         LoginPage loginPage = LoginPage.getInstance();
         managerPage = loginPage.loginToManagerPage(userId, userPasswd);
 

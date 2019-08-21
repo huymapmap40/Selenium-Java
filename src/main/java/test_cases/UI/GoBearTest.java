@@ -5,6 +5,7 @@ import page_objects.Z_demo_page.GoBearPage;
 import page_objects.Z_demo_page.InsuranceResultsPage;
 import test_cases.TestSetup;
 import utilities.Constant;
+import test_data.general.PageURLs;
 
 import static org.testng.Assert.assertEquals;
 
@@ -20,7 +21,7 @@ public class GoBearTest extends TestSetup {
         System.out.println("Demo test travel insurance");
 
         // Go to https://www.gobear.com/ph?x_session_type=UAT
-        GoBearTest.setupTest(Constant.urlPage);
+        GoBearTest.setupTest(PageURLs.GOBEAR_PAGE);
         GoBearPage mainGoBearPage = GoBearPage.getInstance();
 
         mainGoBearPage.chooseInsuranceTab();

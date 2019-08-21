@@ -5,9 +5,9 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+import utilities.Constant;
 
 public class BaseConfig {
 
@@ -57,7 +57,7 @@ public class BaseConfig {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(CapabilityType.BROWSER_NAME, getBrowserName());
         driver = new RemoteWebDriver(new URL(getRemoteAddress()), caps);
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, Constant.DRIVER_TIMEOUT);
     }
 
     public void shutdown(){

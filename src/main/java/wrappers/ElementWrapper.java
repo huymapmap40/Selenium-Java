@@ -6,19 +6,18 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import utilities.Constant;
 import java.util.Objects;
 
 public class ElementWrapper {
 
-    private int elementTimeout = 30;
     private By locators;
     private WebElement element;
     private WebDriverWait wait;
 
     public ElementWrapper(By locators) {
         this.locators = locators;
-        this.wait = new WebDriverWait(BrowserWrapper.getDriverInstance(), elementTimeout);
+        this.wait = new WebDriverWait(BrowserWrapper.getDriverInstance(), Constant.ELEMENT_TIMEOUT);
 //        this.element = BrowserWrapper.getDriverInstance().findElement(this.locators);
     }
 
@@ -28,7 +27,7 @@ public class ElementWrapper {
     }
 
     public void waitClickable() {
-//        timeOut = elementTimeout;
+//        timeOut = Constant.ELEMENT_TIMEOUT;
         this.wait.until(ExpectedConditions.elementToBeClickable(this.locators));
     }
 

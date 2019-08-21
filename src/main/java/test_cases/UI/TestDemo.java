@@ -4,7 +4,7 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 import page_objects.Z_demo_page.SeleniumEasyPage;
 import test_cases.TestSetup;
-import utilities.Constant;
+import test_data.general.PageURLs;
 
 public class TestDemo extends TestSetup {
 
@@ -13,7 +13,7 @@ public class TestDemo extends TestSetup {
     @Test
     public void TCDEMO() {
         System.out.println("Demo test case run");
-        TestDemo.setupTest(Constant.urlPage);
+        TestDemo.setupTest(PageURLs.GURU_99_PAGE);
         SeleniumEasyPage seleniumEasyPage = SeleniumEasyPage.getInstance();
 
         seleniumEasyPage.inputMessageToField(mesageText);
